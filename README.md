@@ -1,5 +1,7 @@
-# convogpt
-This repo contains pretrained models and tools that are to be used for modelling human-aligned dialog.
+# OPT-convogpt
+This is an updated version of convogpt that I've modified to run OPT models. It can also run any other LLM pytorch model with just 2 lines of code being changed to whatever model you're using.
+
+Aside from this, it is now able to get repeated inputs instead of running once and outputting a value.
 
 ## ⚙️ Pretrained Models
 | Model ID   | Parameter Count | Training Method |
@@ -14,6 +16,7 @@ This repo contains pretrained models and tools that are to be used for modelling
 ```shell
 git clone git@github.com:harubaru/convogpt.git
 cd convogpt
+pip install protobuf==3.20.*
 python -m pip install -r requirements
 ```
 
