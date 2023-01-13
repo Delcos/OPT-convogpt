@@ -1,9 +1,9 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, OPTForCausalLM
 
 class GPTGenerator:
     def __init__(self, model_name_or_path: str):
-        self.tokenizer = AutoTokenizer.from_pretrained('gpt2')
-        self.model = AutoModelForCausalLM.from_pretrained(
+        self.tokenizer = AutoTokenizer.from_pretrained('facebook/opt-2.7b')
+        self.model = OPTForCausalLM.from_pretrained(
             model_name_or_path
         ).eval()
 
@@ -33,6 +33,9 @@ class GPTGenerator:
         )
 
         return output
-
-generator = GPTGenerator("models/convogpt-small/hakurei/lit-125M-1-2-1e-05--1671518439")
+#Make a folder called opt-350 and then add your model there. It doesn't have to be 350b. Any pytorch model will work but chnage the CausalLM to match in both lines.
+generator = GPTGenerator("models/opt-350/")
 print(generator.generate("Eiki Shiki:", 40, 1))
+
+
+
